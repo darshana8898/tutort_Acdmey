@@ -1,0 +1,151 @@
+Q1. Given an array of N integers. Your task is to print the sum of all of the integers.
+void SumofInteger(int arr[],int N)
+{
+    int sum=0;
+    for(int i=0;i<N;i++)
+    {
+        sum=sum+arr[i];
+    }
+    cout<<"sum of elements : "<<sum<<endl;
+}
+TC:O(N)
+============================================================================================
+Q2.Given an array A[] of N integers and an index Key. Your task is to print the element present at
+index key in the array.
+
+void findElemGivenIndex(int arr[],int N,int key)
+{
+    for(int i=0;i<N;i++)
+    {
+        if(key==i)
+        cout<<arr[i];
+    }
+    
+}
+TC:O(N)
+------------------------------------------------------------------------------------
+Q3. Given an sorted array A of size N. Find number of elements which are less than or equal to given
+element X.
+
+int findElementsLess(int arr[],int N,int x)
+{
+    int count=0;
+    for(int i=0;i<N;i++)
+    {
+        if(arr[i]<=x)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+TC:O(N)
+===================================================================================
+Q4. You are given an array A of size N. You need to print elements of A in alternate order (starting
+from index 0).
+void PrintElements(int arr[],int N)
+{
+    for(int i=0;i<N;i+=2)
+    {
+        cout<<arr[i]<<endl;
+    }
+}
+TC:O(N/2)
+====================================================================================
+Q5. Given an array Arr of N positive integers. Your task is to find the elements whose value is equal
+to that of its index value
+int findelements(int arr[],int N)
+{
+    int number=0;
+    for(int i=0;i<N;i++)
+    {
+        if(arr[i]==i+1)
+        {
+            number=arr[i];
+        }
+    }
+    return number;   
+}
+========================================================================================
+Q 6.Given an array of size N and you have to tell whether the array is perfect or not. An array is said
+to be perfect if it's reverse array matches the original array. If the array is perfect then print
+"PERFECT" else print "NOT PERFECT"
+    int N=5;
+    int arr[]={1, 2, 3, 4, 5};
+    int i=0;
+    int j=N-1;
+    bool count=0;
+    
+    for(i=0;i<N;i++){
+        
+        while(j>i)
+        {
+            
+            if(arr[i]==arr[j])
+            {
+            j--;
+            count=1;
+            }
+            else
+            {
+                count=0;
+                break;
+            }
+        }
+        
+    }
+    if(count==1)
+        cout<<"PERFECT";
+    else
+        cout<<"NOT PERFECT";
+========================================================================================    
+Q9. Write a program to find the sum of the given series 1+2+3+ . . . . . .(N terms)
+int N=1,sum=0;
+    for(int i=1;i<=N;i++)
+    {
+        sum+=i;
+    }
+    cout<<"Sum :"<<sum<<endl;
+
+TC:O(N)
+=====================================================================================
+Q8. Given an array of N distinct elements, the task is to find all elements in array except two greatest
+elements in sorted order.
+
+void findEleExcpMax(int arr[],int N)
+{
+    sort(arr,arr+N);
+    for(int i=0;i<N-2;i++)
+        cout<<arr[i]<<" ";
+}
+TC O(N-2)
+===================================================================================
+
+Q7. Given an array of length N, at each step it is reduced by 1 element. In the first step the maximum
+element would be removed, while in the second step minimum element of the remaining array would
+be removed, in the third step again the maximum and so on. Continue this till the array contains only 1
+element. And find the final element remaining in the array.
+
+1.Sort the array 
+2.How to remove iterationwise need a logic.
+
+===================================================================================
+Q10. Given a number N. Your task is to check whether it is fascinating or not.
+Fascinating Number: When a number(should contain 3 digits or more) is multiplied by 2 and 3 ,and
+when both these products are concatenated with the original number, then it results in all digits from 1
+to 9 present exactly once.
+Example 1:
+Input:
+N = 192
+Output: Fascinating
+Explanation: After multiplication with 2
+and 3, and concatenating with original
+number, number will become 192384576
+which contains all digits from 1 to 9
+
+int N=192;
+string str= to_string(N)+to_string(N*2)+to_string(N*3);  o/p->192384576
+
+
+
